@@ -1,0 +1,169 @@
+/* Color Scheme: black, ghostwhite, crimson */
+
+
+body {
+  margin: 0;
+  background-color: ghostwhite;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: black;
+}
+
+/***********************
+***** TOP NAV BAR ******
+************************/
+
+nav {
+  overflow: hidden;
+  background-color:black; /* #333; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+  float: left;
+  display: block;
+  color: ghostwhite; /* #f2f2f2 */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Style the active links inside the navigation bar */
+nav a.active {
+  background-color: crimson; /* #4CAF50; */
+  color: ghostwhite;
+  /* border-color: black; */
+  /* outline: none; */
+}
+
+/* Style the hamburger button in navigation bar when the screen is narrow */
+nav .nav-hamburger-button {
+  display: none;
+  border: 0;
+  background-color: black;
+  color: ghostwhite;
+  text-align: center;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+/* Style the hamburger button in navigation bar when the screen is narrow and there is a hover action */
+nav .nav-hamburger-button:hover {
+  background-color: ghostwhite; /* #ddd */
+  color: black;
+  /* text-decoration: none; */
+}
+
+nav .nav-hamburger-button:focus {
+  /* Remove the blue border that Chrome adds after clicking button */
+  outline: none; 
+}
+
+nav .nav-menu-div {
+  float: left;
+  overflow: hidden;
+}
+
+nav .nav-menu-div .nav-menu-button {
+  display: inline-block;
+  color: ghostwhite; /* #f2f2f2 */
+  background-color:black; /* #333; */
+  font-size: 24px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-style: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  margin: 0;
+}
+
+nav .nav-menu-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+nav .nav-menu-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+}
+
+nav a:not(.active):hover  {
+  background-color: #555;
+  color: white;
+}
+
+nav .nav-menu-button:hover  {
+  background-color: #555;
+  color: white;
+}
+
+
+nav .nav-menu-content, a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* .nav-menu-div:hover .nav-menu-content {
+  display: block;
+} */
+
+/*****************************************************
+***** MEDIA QUERIES FOR WHEN SCEEN SIZE CHANGES ******
+******************************************************/
+
+@media screen and (max-width: 600px) {
+  /* Do this when the screen goes from narrow to wide */
+  nav.topnav-inline a:not(:first-child), .nav-menu-div, .nav-menu-button, .nav-menu-content {
+    display: none;
+  }
+  nav.topnav-inline a.active {display: block;}
+  nav.topnav-inline .nav-hamburger-button {
+    float: right;
+    display: block;
+  }
+
+  /* Do these when the screen goes from wide to narrow */
+  nav.topnav-dropdown {
+    position: relative;
+  }
+
+  nav.topnav-dropdown .nav-hamburger-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* background-color: crimson; /* #4CAF50; */
+    display: block;
+    background-color: crimson;
+  }
+
+  nav.topnav-dropdown a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  nav.topnav-dropdown .nav-menu-div {float: none;}
+  nav.topnav-dropdown .nav-menu-content {
+    position: relative;
+  }
+  nav.topnav-dropdown .nav-menu-div {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  nav.topnav-dropdown .nav-menu-button {float: none;}
+}
