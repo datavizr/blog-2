@@ -34,8 +34,6 @@ nav a {
 nav a.active {
   background-color: crimson; /* #4CAF50; */
   color: ghostwhite;
-  /* border-color: black; */
-  /* outline: none; */
 }
 
 /* Style the hamburger button in navigation bar when the screen is narrow */
@@ -67,9 +65,9 @@ nav .nav-menu-div {
 }
 
 nav .nav-menu-div .nav-menu-button {
-  display: inline-block;
-  color: ghostwhite; /* #f2f2f2 */
-  background-color:black; /* #333; */
+  display: block;
+  color: ghostwhite;
+  background-color:black;
   font-size: 24px;
   text-align: center;
   padding: 14px 16px;
@@ -81,7 +79,7 @@ nav .nav-menu-div .nav-menu-button {
   margin: 0;
 }
 
-nav .nav-menu-content {
+.nav-menu-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -90,7 +88,7 @@ nav .nav-menu-content {
   z-index: 1;
 }
 
-nav .nav-menu-content a {
+.nav-menu-content a {
   float: none;
   color: black;
   padding: 12px 16px;
@@ -105,11 +103,10 @@ nav a:not(.active):hover  {
   color: white;
 }
 
-nav .nav-menu-button:hover  {
+nav .nav-menu-button:hover, .nav-menu-div:hover  {
   background-color: #555;
   color: white;
 }
-
 
 nav .nav-menu-content, a:hover {
   background-color: #ddd;
@@ -125,17 +122,28 @@ nav .nav-menu-content, a:hover {
 ******************************************************/
 
 @media screen and (max-width: 600px) {
-  /* Do this when the screen goes from narrow to wide */
+
+  /*************************************************************/
+  /* Do the following when the screen goes from narrow to wide */
+  /*************************************************************/
+
   nav.topnav-inline a:not(:first-child), .nav-menu-div, .nav-menu-button, .nav-menu-content {
     display: none;
   }
-  nav.topnav-inline a.active {display: block;}
+
+  nav.topnav-inline a.active {
+    display: block;
+  }
+
   nav.topnav-inline .nav-hamburger-button {
     float: right;
     display: block;
   }
 
+  /*****************************************************/
   /* Do these when the screen goes from wide to narrow */
+  /*****************************************************/
+
   nav.topnav-dropdown {
     position: relative;
   }
@@ -149,21 +157,32 @@ nav .nav-menu-content, a:hover {
     background-color: crimson;
   }
 
+  nav.topnav-dropdown .nav-hamburger-button:hover {
+    color: #555;
+    background-color: #ddd;
+  }
+
   nav.topnav-dropdown a {
     float: none;
     display: block;
     text-align: left;
   }
 
-  nav.topnav-dropdown .nav-menu-div {float: none;}
-  nav.topnav-dropdown .nav-menu-content {
-    position: relative;
-  }
   nav.topnav-dropdown .nav-menu-div {
     display: block;
+    float: none;
     width: 100%;
     text-align: left;
   }
 
-  nav.topnav-dropdown .nav-menu-button {float: none;}
+  nav.topnav-dropdown .nav-menu-button {
+    float: none;
+    background-color: inherit;
+  }
+
+  nav.topnav-dropdown .nav-menu-content {
+    position: relative;
+    display: none;
+  }
+
 }
