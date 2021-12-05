@@ -4,7 +4,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css"/>
-
 </head>
 <body>
   <!-- <script src="https://cdn.jsdelivr.net/npm/vega"></script>
@@ -12,9 +11,6 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script> -->
 
   <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/vega@5.19.1/build/vega.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0/build/vega-lite.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1/build/vega-embed.js"></script>
@@ -64,8 +60,8 @@
     "width": 800,
     "height": 500,
     "data": {
-      "url": "tide_data.json",
-      // "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=20210205%2010:00&end_date=20210301%2010:24&station=8454000&product=water_level&datum=mllw&units=metric&time_zone=gmt&application=web_services&format=json",
+      // "url": "tide_data.json",
+      "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=20210205%2010:00&end_date=20210301%2010:24&station=8454000&product=water_level&datum=mllw&units=metric&time_zone=gmt&application=web_services&format=json",
       "format": {
         "type": "json", 
         "property": "data",
